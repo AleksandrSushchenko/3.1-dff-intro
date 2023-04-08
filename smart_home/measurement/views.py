@@ -7,7 +7,6 @@ from .serializers import SensorSerializer, MeasurementSerializer, SensorDetailSe
 
 class SensorListCreateView(ListCreateAPIView):
     def get(self, request):
-        print('-------SensorListCreateView-------')
         queryset = Sensor.objects.all()
         serializer = SensorSerializer(queryset, many=True)
         return Response(serializer.data)
